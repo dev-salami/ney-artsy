@@ -1,0 +1,47 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border-color: rgb(0, 0, 0);
+}
+body {
+  font-family: "Open Sans", "Roboto", "Oxygen", "Ubuntu", "Cantarell",
+    "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  background-color: rgb(229 231 235);
+}
+
+/* code {
+  font-family: "Open Sans", "Courier New", monospace;
+} */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* .filter{
+  filter: opacity(70);
+} */
+.auction-bg-1 {
+  background-image: url("./asset/auction-1.png");
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: auto;
+}
+.h-swiper {
+  height: initial;
+}
+.bg-upcoming {
+  background-image: linear-gradient(to right, #4693ed, #c056097d);
+}
+.bg-upcoming-inner {
+  background-image: url(./asset//upcoming.png);
+  background-size: cover;
+}
+.bg-bid {
+  background-image: url(./asset/bid-img.png);
+  background-size: auto;
+  background-repeat: no-repeat;
+}
+@layer components {
+  .input {
+    @apply mt-1 p-1 max-w-sm capitalize border  border-gray-300 focus:outline-none focus:ring-0 focus:border-gray-300 rounded text-sm pl-2 text-gray-900;
+  }
+}
