@@ -1,4 +1,4 @@
-import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
+import { MdArrowForwardIos, MdArrowBackIos } from "react-icons/md";
 
 function upComing() {
   return (
@@ -36,10 +36,10 @@ function upComing() {
         </div>
         <div className="flex gap-6">
           <button className="h-12 w-12 bg-white/40 rounded-full flex items-center justify-center ">
-            <IoIosArrowBack />
+            <MdArrowForwardIos />
           </button>
           <button className="h-12 w-12 bg-white/40 rounded-full flex items-center justify-center">
-            <IoIosArrowForward />
+            <MdArrowBackIos />
           </button>
         </div>
       </div>

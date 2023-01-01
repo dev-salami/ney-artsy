@@ -1,8 +1,12 @@
 import { useState } from "react";
-import { IoIosArrowDown } from "react-icons/io";
 import { useSelector, useDispatch } from "react-redux";
 import { FcLike, FcLikePlaceholder } from "react-icons/fc";
-import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
+import {
+  MdArrowForwardIos,
+  MdArrowBackIos,
+  MdArrowDownward,
+} from "react-icons/md";
+
 import { addCart } from "../redux/cartSlice";
 
 import { ToastContainer, toast } from "react-toastify";
@@ -113,15 +117,15 @@ function SingleProduct() {
             <div>
               <div className="flex justify-between items-center p-4 cursor-pointer border-black border-y-2">
                 <button className="text-xl">Description</button>
-                <IoIosArrowDown size={35} />
+                <MdArrowDownward size={35} />
               </div>
               <div className="flex justify-between items-center p-4 cursor-pointer">
                 <button className="text-xl">Listings</button>
-                <IoIosArrowDown size={35} />
+                <MdArrowDownward size={35} />
               </div>
               <div className="flex justify-between items-center p-4 cursor-pointer border-black border-t-2 md:border-y-2">
                 <button className="text-xl">status</button>
-                <IoIosArrowDown size={35} />
+                <MdArrowDownward size={35} />
               </div>
             </div>
           </main>
@@ -138,10 +142,10 @@ function SingleProduct() {
           <p className="text-xl">Explore more from this collection</p>
           <div className="flex gap-6">
             <button className="h-16 w-16 border-2 border-black rounded-full flex items-center justify-center ">
-              <IoIosArrowBack size={40} />
+              <MdArrowBackIos size={40} />
             </button>
             <button className="h-16 w-16 border-2 border-black bg-white/40 rounded-full flex items-center justify-center">
-              <IoIosArrowForward size={40} />
+              <MdArrowForwardIos size={40} />
             </button>
           </div>
         </div>

@@ -1,4 +1,4 @@
-import { IoMdClose } from "react-icons/io";
+import { RiCloseFill } from "react-icons/ri";
 import Lapimg from "../asset/bid-img.png";
 import { Link, useNavigate } from "react-router-dom";
 import { FcLike, FcLikePlaceholder } from "react-icons/fc";
@@ -67,7 +67,7 @@ function LiveBid() {
                   onClick={() => navigate("/auctions")}
                   className="bg-gray-500 h-10 w-10 flex items-center justify-center text-white rounded-full"
                 >
-                  <IoMdClose size={25} />
+                  <RiCloseFill size={25} />
                 </button>
                 <p className="bg-blue-500 w-fit px-4 py-1 rounded-xl h-fit text-white">
                   Live
@@ -158,7 +158,7 @@ function LiveBid() {
                   onClick={() => navigate("/auctions")}
                   className="bg-gray-500 h-8 w-8 flex items-center justify-center text-white rounded-full"
                 >
-                  <IoMdClose size={20} />
+                  <RiCloseFill size={20} />
                 </button>
               </div>
             </div>

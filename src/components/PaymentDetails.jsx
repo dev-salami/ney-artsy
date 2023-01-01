@@ -1,6 +1,6 @@
 import ShopNav from "./ShopNav";
 import { useSelector } from "react-redux";
-import { HandlePayment } from "./paystack";
+// import { HandlePayment } from "./paystack";
 
 function PaymentDetails() {
   const { amount } = useSelector((state) => state.cart);
@@ -8,7 +8,7 @@ function PaymentDetails() {
 
   return (
     <>
-      <ShopNav />
+      {/* <ShopNav />
       <button
         onClick={() =>
           HandlePayment(shipDet.email, Math.ceil(amount * 1.1 * 700))
@@ -16,7 +16,7 @@ function PaymentDetails() {
         className="px-4 py-2 bg-blue-500 text-white"
       >
         Pay ₦ {Math.ceil(amount * 1.1 * 700)}
-      </button>
+      </button> */}
     </>
   );
 }
