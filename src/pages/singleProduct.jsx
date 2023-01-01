@@ -8,7 +8,6 @@ import { addCart } from "../redux/cartSlice";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-import Img from "../asset/product-1.png";
 import eth from "../asset/eth.png";
 import Navbar from "../components/Navbar";
 import { Link, useParams } from "react-router-dom";
@@ -35,15 +34,6 @@ function SingleProduct() {
       toast.success(`${name} successfully added to the cart`);
     }
   };
-
-  // const getLocalStorage = () => {
-  //   let cart = localStorage.getItem("cart");
-  //   if (cart) {
-  //     return JSON.parse(localStorage.getItem("cart"));
-  //   } else {
-  //     return [];
-  //   }
-  // };
 
   return (
     <>

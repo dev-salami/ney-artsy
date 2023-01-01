@@ -3,7 +3,6 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
-import ShopNav from "../components/ShopNav";
 import { fetchData } from "../redux/cartSlice";
 import ProductItem from "../components/ProductItem";
 import { useState } from "react";
@@ -14,6 +13,7 @@ function Product() {
 
   const dispatch = useDispatch();
   const { products } = useSelector((state) => state.cart);
+  //eslint-disable-next-line
   useEffect(() => {
     axios
       .get(

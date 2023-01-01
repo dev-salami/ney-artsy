@@ -1,13 +1,11 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { BsSearch, BsBell, BsCart } from "react-icons/bs";
 import { RiMessage2Fill } from "react-icons/ri";
-import Aos from "aos";
 import "aos/dist/aos.css";
 import { NavLink, Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 function Navbar() {
-  const dispatch = useDispatch();
   const [Open, SetOpen] = useState(false);
   const { cartItems } = useSelector((state) => state.cart);
 

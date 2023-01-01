@@ -3,14 +3,12 @@ import Lapimg from "../asset/bid-img.png";
 import { Link, useNavigate } from "react-router-dom";
 import { FcLike, FcLikePlaceholder } from "react-icons/fc";
 import { sendMsg } from "../redux/msgSlice";
-import Bids from "../bid.json";
 import { useSelector, useDispatch } from "react-redux";
 
 import { FaTelegramPlane } from "react-icons/fa";
 import { useState } from "react";
 import { BsArrowRight } from "react-icons/bs";
 import { AiFillEye } from "react-icons/ai";
-import Navbar from "../components/Navbar";
 function LiveBid() {
   const dispatch = useDispatch();
   const { message } = useSelector((state) => state.msg);

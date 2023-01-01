@@ -2,12 +2,12 @@ import { useEffect, useState } from "react";
 import { FaTimes } from "react-icons/fa";
 import { FcLike, FcLikePlaceholder } from "react-icons/fc";
 import { useSelector, useDispatch } from "react-redux";
-import { removeItem, calcTotal, decCount } from "../redux/cartSlice";
+import { removeItem } from "../redux/cartSlice";
 
 function CartItem({
   url,
   id,
-  amount,
+
   count,
   creator,
   name,
@@ -21,7 +21,6 @@ function CartItem({
   const { cartItems } = useSelector((state) => state.cart);
   const curItem = cartItems.find((i) => i.id === id);
   const num = curItem.count;
-  const total = num * curItem.price.usd;
 
   useEffect(() => {
     localStorage.setItem("cart", JSON.stringify(cartItems));
