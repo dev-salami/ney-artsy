@@ -16,7 +16,7 @@ function LiveBid() {
   const navigate = useNavigate();
   const [likeA, setLikeA] = useState(false);
   const [text, setText] = useState("");
-  const [price, setprice] = useState("102");
+  const price = 102;
 
   // const [Bidder, setBidder] = useState([...Bids]);
 

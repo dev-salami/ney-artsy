@@ -19,8 +19,6 @@ function CartItem({
 
   const dispatch = useDispatch();
   const { cartItems } = useSelector((state) => state.cart);
-  const curItem = cartItems.find((i) => i.id === id);
-  const num = curItem.count;
 
   useEffect(() => {
     localStorage.setItem("cart", JSON.stringify(cartItems));

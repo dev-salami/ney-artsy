@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router-dom";
+import PaystackPop from "@paystack/inline-js";
 export const HandlePayment = (email, amount) => {
   const navigate = useNavigate;
   const handler = PaystackPop.setup({
@@ -12,7 +13,7 @@ export const HandlePayment = (email, amount) => {
     callback: (response) => {
       let message = "Payment complete! Reference: " + response.reference;
 
-      //   alert(message);
+      alert(message);
       navigate("/success");
     },
   });

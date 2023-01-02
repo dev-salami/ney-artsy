@@ -9,8 +9,7 @@ import { store } from "./redux/store";
 import { Provider } from "react-redux";
 import Loader from "./components/loader";
 import Error from "./pages/Error";
-import Navbar from "./components/Navbar";
-import ShopNav from "./components/ShopNav";
+
 import ShoppingCart from "./components/ShoppingCart";
 import ShippingDetails from "./components/ShippingDetails";
 import PaymentDetails from "./components/PaymentDetails";

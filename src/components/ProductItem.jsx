@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import Img from "../asset/product-1.png";
 function ProductItem({ item }) {
   return (
     <div className="flex flex-col gap-1 px-2 ">

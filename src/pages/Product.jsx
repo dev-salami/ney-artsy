@@ -28,6 +28,7 @@ function Product() {
         seterror(err.message);
         setloading(false);
       });
+    //eslint-disable-next-line
   }, []);
   return (
     <>

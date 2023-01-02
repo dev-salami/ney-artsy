@@ -4,7 +4,7 @@ import { BsSearch, BsBell, BsCart } from "react-icons/bs";
 import { AiOutlineClose } from "react-icons/ai";
 import "aos/dist/aos.css";
 import { NavLink, Link } from "react-router-dom";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 function Navbar() {
   const [Open, SetOpen] = useState(false);
   const { cartItems } = useSelector((state) => state.cart);

@@ -1,10 +1,8 @@
-import { useState } from "react";
-import { useSelector } from "react-redux";
-import { Link, NavLink, Outlet } from "react-router-dom";
+import { NavLink, Outlet } from "react-router-dom";
 
 import Navbar from "./Navbar";
 function ShopNav() {
-  const { shipDet } = useSelector((state) => state.cart);
+  // const { shipDet } = useSelector((state) => state.cart);
 
   return (
     <>
