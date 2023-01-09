@@ -46,7 +46,7 @@ const cartSlice = createSlice({
   reducers: {
     fetchData: (state, action) => {
       const products = action.payload;
-      // state.products = products;
+      state.products = products;
       localStorage.setItem("products", JSON.stringify(products));
       // state.cartItems = products;
     },
@@ -84,9 +84,23 @@ const cartSlice = createSlice({
       localStorage.removeItem("cart");
       state.cartItems = [];
     },
+    Search: (state, action) => {
+      state.products = action.payload;
+    },
+    Sort: (state, action) => {
+      state.products = action.payload;
+    },
   },
 });
-export const { fetchData, addCart, removeItem, clearCart, saveDetail, Check } =
-  cartSlice.actions;
+export const {
+  fetchData,
+  addCart,
+  removeItem,
+  clearCart,
+  saveDetail,
+  Check,
+  Search,
+  Sort,
+} = cartSlice.actions;
 
 export default cartSlice.reducer;

@@ -31,8 +31,8 @@ function PaymentDetails() {
     <>
       <ShopNav />
 
-      <section className="container mx-auto px-12 flex flex-col md:flex-row justify-around">
-        <aside className="w-[40%] border-gray-600 border-2 p-6 rounded-2xl">
+      <section className="container mx-auto px-12 flex flex-col gap-12 md:flex-row justify-around">
+        <aside className="md:w-[40%] border-gray-600 border-2 p-6 rounded-2xl">
           <div className="flex justify-center flex-col gap-8 ">
             <div className="flex flex-col space-y-3">
               <h2 className="text-center font-semibold text-xl">
@@ -126,23 +126,23 @@ function PaymentDetails() {
             </button>
           </div>
         </aside>
-        <main className="w-[40%] border-gray-600 border-2 p-6 rounded-2xl flex flex-col gap-3">
+        <main className="md:w-[40%] border-gray-600 border-2 p-6 rounded-2xl flex flex-col gap-3">
           <h2 className="text-center font-semibold text-xl">
             Pay with your debit card
           </h2>
           <div className="gap-2 flex-col flex">
-            <div className="flex gap-3">
-              <span>Full Name : </span>
+            <div className="flex xs:flex-row flex-col gap-3">
+              <span className="font-semibold">Full Name : </span>
               <span className="font-medium">
                 {shipDet.surname} {shipDet.first} {shipDet.other}
               </span>
             </div>
-            <div className="flex gap-3">
-              <span>Email Address : </span>
+            <div className="flex gap-3 xs:flex-row flex-col">
+              <span className="font-semibold">Email Address : </span>
               <span>{shipDet.email}</span>
             </div>
-            <div className="flex gap-3">
-              <span>Delivery Address : </span>
+            <div className="flex gap-3 xs:flex-row flex-col">
+              <span className="font-semibold">Delivery Address : </span>
               <span>
                 {shipDet.address}, {shipDet.state}. {shipDet.country}
               </span>
@@ -150,8 +150,8 @@ function PaymentDetails() {
           </div>
           <div>
             <p>
-              <div className="flex gap-3">
-                <span>Expected arrival date : </span>
+              <div className="flex gap-3 xs:flex-row flex-col">
+                <span className="font-semibold">Expected arrival date : </span>
                 {year}/{month}/{day}
               </div>
             </p>

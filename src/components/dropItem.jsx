@@ -35,7 +35,7 @@ function dropItem({ item }) {
       </div>
       <div
         data-aos="zoom-in"
-        className="flex flex-col space-y-2 sm:space-y-3 justify-center md:w-2/5"
+        className="flex flex-col space-y-2 sm:space-y-3 justify-center md:w-3/5"
       >
         <div className="md:flex hidden ">
           {item.status === "upcoming" && (
@@ -56,7 +56,7 @@ function dropItem({ item }) {
         </div>
         <p>{item.date}</p>
         <p className=" text-xl md:text-2xl font-semibold">{item.name}</p>
-        <p className="text-sm sm:text-base max-w-sm font-medium ">
+        <p className="text-sm sm:text-base md:max-w-lg font-medium ">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia sequi
           doloremque nisi ratione exercitationem, aliquam qui! Consequatur alias
           adipisci tempora, dolores mollitia, autem id ut dolorum neque vel

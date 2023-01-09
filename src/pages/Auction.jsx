@@ -16,6 +16,7 @@ import "swiper/css/pagination";
 import { Pagination, Autoplay } from "swiper";
 import { BsArrowRight } from "react-icons/bs";
 import Navbar from "../components/Navbar";
+import { Link } from "react-router-dom";
 
 function Auction() {
   const [like, setLike] = useState(false);
@@ -204,9 +205,12 @@ function Auction() {
                   <h5>Current bid</h5>
                   <span>0.987 ETH</span>
                 </div>
-                <button className="bg-blue-600 text-white px-6 py-2 mt-3">
+                <Link
+                  to="/livebid"
+                  className="bg-blue-600 text-white px-6 py-2 mt-3"
+                >
                   Place bid
-                </button>
+                </Link>
               </div>
             </div>
           </div>
@@ -258,9 +262,12 @@ function Auction() {
                   <h5>Current bid</h5>
                   <span>0.99 ETH</span>
                 </div>
-                <button className="bg-blue-600 text-white px-6 py-2 mt-3">
+                <Link
+                  to="/livebid"
+                  className="bg-blue-600 text-white px-6 py-2 mt-3"
+                >
                   Place bid
-                </button>
+                </Link>
               </div>
             </div>
           </div>

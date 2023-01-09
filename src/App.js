@@ -15,7 +15,7 @@ import ShippingDetails from "./components/ShippingDetails";
 import PaymentDetails from "./components/PaymentDetails";
 import Empty from "./components/empty";
 // import Test from "./components/ProductItem";
-import Test from "./pages/liveBid";
+import Bid from "./pages/liveBid";
 import Tyou from "./pages/Tyou";
 
 import SingleProduct from "./pages/singleProduct";
@@ -35,7 +35,7 @@ function App() {
           <Suspense fallback={<Loader />}>
             <Routes>
               <Route path="/" element={<Home />} />
-              <Route path="/test" element={<Test />} />
+              <Route path="/livebid" element={<Bid />} />
 
               <Route path="/products" element={<Product />} />
               <Route path="/products/:id" element={<SingleProduct />} />
