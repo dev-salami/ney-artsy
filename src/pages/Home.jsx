@@ -9,23 +9,23 @@ import Aos from "aos";
 import "aos/dist/aos.css";
 
 function Home() {
-  useEffect(() => {
-    Aos.init({
-      offset: 200,
-      duration: 2000,
-      easing: "ease-out",
-      delay: 400,
-    });
-  }, []);
-  return (
-    <>
-      <Navbar />
-      <Header />
-      <Featured />
-      <UpComing />
-      <Nletter />
-      <Footer />
-    </>
-  );
+	useEffect(() => {
+		Aos.init({
+			offset: 200,
+			duration: 2000,
+			easing: "ease-out",
+			delay: 400,
+		});
+	}, []);
+	return (
+		<>
+			<Navbar />
+			<Header />
+			<Featured />
+			<UpComing />
+			<Nletter />
+			<Footer />
+		</>
+	);
 }
 export default Home;
