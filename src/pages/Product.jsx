@@ -6,12 +6,15 @@ import Navbar from "../components/Navbar";
 import { fetchData, Search, Sort } from "../redux/cartSlice";
 import ProductItem from "../components/ProductItem";
 import { useState } from "react";
-import { useQuery, useMutation } from "@tanstack/react-query";
+import { useQuery } from "@tanstack/react-query";
 import Loader from "../components/loader";
 
 function Product() {
+	//eslint-disable-next-line
 	const [error, seterror] = useState("");
+	//eslint-disable-next-line
 	const [loading, setloading] = useState(true);
+
 	const [text, settext] = useState("");
 	const [srt, setsrt] = useState("");
 
@@ -53,6 +56,7 @@ function Product() {
 	};
 	useEffect(() => {
 		sortChange();
+		//eslint-disable-next-line
 	}, [srt]);
 
 	// useEffect(() => {
@@ -114,6 +118,7 @@ function Product() {
 		dispatch(Search(tempProducts));
 		//eslint-disable-next-line
 	}, [text]);
+
 	return (
 		<>
 			{isLoading ? (
@@ -164,8 +169,8 @@ function Product() {
 												item={item}
 											/>
 										))}
-										{error && products && <p>{error}</p>}
-										{loading && <p>loading</p>}
+										{/* {error && products && <p>{error}</p>}
+										{loading && <p>loading</p>} */}
 									</div>
 								) : (
 									<p className="text-4xl font-bold">

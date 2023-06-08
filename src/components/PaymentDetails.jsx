@@ -6,7 +6,6 @@ import mm from "../asset/mm-logo.png";
 import cb from "../asset/cb-logo.jpg";
 import bk from "../asset/bitkeep.png";
 import phatom from "../asset/phantom-logo.svg";
-import { useState } from "react";
 import { PaystackButton } from "react-paystack";
 
 function PaymentDetails() {
