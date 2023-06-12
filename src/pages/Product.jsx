@@ -11,9 +11,9 @@ import Loader from "../components/loader";
 
 function Product() {
 	//eslint-disable-next-line
-	const [error, seterror] = useState("");
+	// const [error, seterror] = useState("");
 	//eslint-disable-next-line
-	const [loading, setloading] = useState(true);
+	// const [loading, setloading] = useState(true);
 
 	const [text, settext] = useState("");
 	const [srt, setsrt] = useState("");
@@ -75,24 +75,24 @@ function Product() {
 	// 		});
 	// 	//eslint-disable-next-line
 	// }, []);
-	const { isLoading, isError, data, isSuccess } = useQuery({
+	const { isLoading, isError, data, error, isSuccess } = useQuery({
 		queryKey: ["products"],
 		queryFn: () => {
-			setloading(true);
-			axios
+			// setloading(true);
+			return axios
 				.get(
 					"https://gist.githubusercontent.com/eniiku/65a95533de1f005eee35d5eb91f3e141/raw/c7188e070a8670a86883ff57224dcad277814761/products.json"
 				)
 				.then((data) => {
 					dispatch(fetchData(data.data.products));
-					setloading(false);
-					seterror(false);
-					return data.data.products;
+					// setloading(false);
+					// seterror(false);
+					return data;
 				})
 				.catch((err) => {
-					console.log(err);
-					seterror(err.message);
-					setloading(false);
+					// console.log(err.message);
+					// seterror(err.message);
+					// setloading(false);
 					return err;
 				});
 		},
@@ -101,11 +101,11 @@ function Product() {
 	if (isLoading) {
 		console.log("Loading");
 	} else if (isError) {
-		console.log("Error");
+		console.log(error);
 	} else if (isSuccess) {
 		console.log("success");
 	}
-	console.log(data);
+	// console.log(data.data.products);
 
 	const tempProd = JSON.parse(localStorage.getItem("products"));
 
@@ -119,71 +119,77 @@ function Product() {
 		//eslint-disable-next-line
 	}, [text]);
 
+	const test = products ? "redux" : "help";
+	console.log(test);
+	const ProductData = products;
+
 	return (
-		<>
+		<section>
+			<Navbar />
 			{isLoading ? (
 				<Loader />
 			) : (
 				<>
-					<Navbar />
+					{isSuccess && (
+						<section className="container mx-auto">
+							<div className="border border-black xs:flex-row flex-col gap-4 py-4  rounded-lg p-2 mb-6 w-4/5 mx-auto flex justify-between items-center">
+								<div className="flex gap-4    items-center">
+									<input
+										className="bg-gray-100 border border-black rounded-lg py-1 px-3   "
+										type="text"
+										value={text}
+										onChange={(e) => settext(e.target.value)}
+										placeholder="Search"
+									/>
+									<div className="md:inline-block hidden">
+										{ProductData.length} Products found
+									</div>
+								</div>
+								<div className="gap-4 flex">
+									<span className="md:inline-block hidden">Sort By</span>
+									<select
+										value={srt}
+										onChange={(e) => {
+											setsrt(e.target.value);
 
-					<section className="container mx-auto">
-						<div className="border border-black rounded-lg p-2 mb-6 w-4/5 mx-auto flex justify-between items-center">
-							<div className="flex gap-4    items-center">
-								<input
-									className="bg-gray-100 border border-black rounded-lg py-1 px-3   "
-									type="text"
-									value={text}
-									onChange={(e) => settext(e.target.value)}
-									placeholder="Search"
-								/>
-								<div className="md:inline-block hidden">
-									{products.length} Products found
+											// dispatch(Sort(e.target.value));
+										}}
+										name="sort"
+										id="">
+										<option value="lowest">Price Lowest</option>
+										<option value="highest">Price Highest</option>
+										<option value="a-z">Name (A-Z)</option>
+										<option value="z-a">Name (Z-A)</option>
+									</select>
 								</div>
 							</div>
-							<div className="gap-4 flex">
-								<span className="md:inline-block hidden">Sort By</span>
-								<select
-									value={srt}
-									onChange={(e) => {
-										setsrt(e.target.value);
-
-										// dispatch(Sort(e.target.value));
-									}}
-									name="sort"
-									id="">
-									<option value="lowest">Price Lowest</option>
-									<option value="highest">Price Highest</option>
-									<option value="a-z">Name (A-Z)</option>
-									<option value="z-a">Name (Z-A)</option>
-								</select>
-							</div>
-						</div>
-						<section className=" flex gap-6">
-							<main className="w-4/5 mx-auto border rounded-xl min-h-screen ">
-								{products.length > 0 ? (
-									<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 p-4">
-										{products.map((item) => (
-											<ProductItem
-												key={item.id}
-												item={item}
-											/>
-										))}
-										{/* {error && products && <p>{error}</p>}
+							<section className=" flex gap-6">
+								<main className="w-4/5 mx-auto border rounded-xl min-h-screen ">
+									{ProductData.length > 0 ? (
+										<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 p-4">
+											{ProductData.map((item) => (
+												<ProductItem
+													key={item.id}
+													item={item}
+												/>
+											))}
+											{/* {error && products && <p>{error}</p>}
 										{loading && <p>loading</p>} */}
-									</div>
-								) : (
-									<p className="text-4xl font-bold">
-										No products matches your filter
-									</p>
-								)}
-							</main>
+										</div>
+									) : (
+										<p className="text-4xl font-bold">
+											No products matches your filter
+										</p>
+									)}
+								</main>
+							</section>
+							<Footer />
 						</section>
-						<Footer />
-					</section>
+					)}
+					{isError && <div>{error}</div>}
 				</>
 			)}
-		</>
+		</section>
 	);
 }
 export default Product;

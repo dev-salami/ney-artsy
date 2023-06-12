@@ -32,7 +32,7 @@ const getAmount = () => {
 	}
 };
 const initialState = {
-	products: getLocalStorage(),
+	products: [],
 	cartItems: getCart(),
 	amount: getAmount(),
 	shipDet: details(),
